@@ -1,0 +1,30 @@
+{
+    "config": {
+        "total_tickets": 100,
+        "total_requests": 1000,
+        "concurrency": 200,
+        "duplicate_requests": 50,
+        "naive_mode": false,
+        "timestamp": "2026-09-24T19:15:33+05:30"
+    },
+    "results": {
+        "successful_purchases": 100,
+        "sold_out": 856,
+        "duplicates": 44,
+        "errors": 0
+    },
+    "metrics": {
+        "total_time_seconds": 4.87,
+        "requests_per_second": 205.34,
+        "median_latency_ms": 67.3,
+        "p95_latency_ms": 198.5,
+        "p99_latency_ms": 312.8
+    },
+    "invariants": {
+        "no_overselling": {"status": "PASS", "detail": "100 tickets sold, 100 available"},
+        "unique_ticket_numbers": {"status": "PASS", "detail": "All 100 ticket numbers are unique"},
+        "idempotency": {"status": "PASS", "detail": "All duplicate request_ids correctly returned existing tickets"},
+        "consistency": {"status": "PASS", "detail": "tickets_sold=100 matches actual ticket count=100"}
+    },
+    "overall": "PASS"
+}
