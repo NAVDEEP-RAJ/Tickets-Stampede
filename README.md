@@ -2,6 +2,10 @@
 
 A high-concurrency ticket selling service built with Django REST Framework and PostgreSQL, verified against four strict invariants under load.
 
+## Live Deployment
+
+- **Live Public Service & Interactive Web Dashboard**: [http://tickets-stampede-production.up.railway.app/](http://tickets-stampede-production.up.railway.app/)
+
 ## System Overview & Invariants
 
 The service exposes three HTTP endpoints (`POST /reset`, `POST /buy`, `GET /status`) designed to handle thousands of concurrent purchase requests while strictly enforcing four system invariants:
